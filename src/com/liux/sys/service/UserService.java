@@ -23,8 +23,6 @@ public class UserService implements IUserService {
 		u.setName("name");
 		u.setPassword("pwd");
 		u = userDao.login(u);
-
-
 		return u;
 	}
 
@@ -35,5 +33,4 @@ public class UserService implements IUserService {
 		list =	userDao.GetUserList();
 		return list;
 	}
-
 }
