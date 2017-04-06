@@ -12,7 +12,7 @@
     </appender>
     <!-- [公共Appender] -->
     <appender name="DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="D:/logs/common-default.log" />
+        <param name="File" value="${webapps.ROOT}/logs/DEFAULT-APPENDER.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="UTF-8" />
         <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -22,7 +22,7 @@
     </appender>
     <!-- [错误日志APPENDER] -->
     <appender name="ERROR-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="D:/logs/common-error.log" />
+        <param name="File" value="${webapps.ROOT}/logs/ERROR-APPENDER.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="UTF-8" />
         <param name="threshold" value="error" />

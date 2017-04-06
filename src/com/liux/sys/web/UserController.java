@@ -33,11 +33,8 @@ public class UserController {
 
 	@RequestMapping("/index")
 	public String login(ModelMap modelMap) {
-
 		
 		logtest.info("slf4j gogogogo");
-		
-		
 		logtest.error("slf4j errorslf4j errorslf4j errorslf4j errorslf4j error");
 /*		interfaceLog.info("====>>«Î«Û");
 		runLog.info("«Î«Û02");*/
