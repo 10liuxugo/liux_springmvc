@@ -1,5 +1,4 @@
-package com.liux.sys.dao;
-
+package com.liux.sys.idao;
 import java.util.List;
 
 import com.liux.sys.entity.UserVo;

@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.liux.sys.dao.UserDao;
 import com.liux.sys.entity.UserVo;
-import com.liux.sys.idao.UserDao;
 import com.liux.sys.iservice.IUserService;
 
 @Service

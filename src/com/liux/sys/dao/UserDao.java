@@ -1,4 +1,5 @@
-package com.liux.sys.idao;
+package com.liux.sys.dao;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,8 +15,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.liux.sys.dao.IUserDao;
 import com.liux.sys.entity.UserVo;
+import com.liux.sys.idao.IUserDao;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
 @Repository("UserDao")
