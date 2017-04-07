@@ -7,4 +7,5 @@ import com.liux.sys.entity.UserVo;
 public interface IUserService {
 	public UserVo login(UserVo u);
 	public List<UserVo> GetUserList();
+	public UserVo selectByPrimaryKey(String id);
 }

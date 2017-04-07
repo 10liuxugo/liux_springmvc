@@ -29,8 +29,16 @@ public class UserService implements IUserService {
 	@Override
 	public List<UserVo> GetUserList() {
 		// TODO Auto-generated method stub
-		List<UserVo> list = new  ArrayList<UserVo>();
-		list =	userDao.GetUserList();
+		List<UserVo> list = new ArrayList<UserVo>();
+		list = userDao.GetUserList();
 		return list;
+	}
+
+	@Override
+	public UserVo selectByPrimaryKey(String id) {
+		// TODO Auto-generated method stub
+
+		UserVo info = userDao.selectByPrimaryKey(id);
+		return info;
 	}
 }

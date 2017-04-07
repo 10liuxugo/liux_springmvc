@@ -27,6 +27,33 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	
+	    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mapping.xml文件 -->
+        <property name="configLocation" value="/WEB-INF/mybatis-config.xml"></property>
+    </bean>        
+        
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+		<constructor-arg index="1" value="REUSE" />
+	</bean>
+
+	<!-- 事务管理器配置, 使用jdbc事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.liux" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+    
+    
+	
 
 	<!-- 开启自动扫描 -->
 	<context:annotation-config />
@@ -39,9 +66,5 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Component" />
 	</context:component-scan>
-
-
-
-
 
 </beans>

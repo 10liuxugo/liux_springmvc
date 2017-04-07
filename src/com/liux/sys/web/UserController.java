@@ -11,33 +11,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import com.liux.sys.entity.UserVo;
 import com.liux.sys.service.UserService;
-
-
 
 @Controller
 public class UserController {
 
 	private static Log runLog = LogFactory.getLog("runLogger");// 运行日志
 	private static Log interfaceLog = LogFactory.getLog("interfaceLogger");// 接口日志
-	
 
-	//slf4j
-    private Logger logtest = LoggerFactory.getLogger(UserController.class);
-    
+	// slf4j
+	private Logger logtest = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	private UserService userService;
 
 	@RequestMapping("/index")
 	public String login(ModelMap modelMap) {
-		
+
 		logtest.info("slf4j gogogogo");
 		logtest.error("slf4j errorslf4j errorslf4j errorslf4j errorslf4j error");
-/*		interfaceLog.info("====>>请求");
-		runLog.info("请求02");*/
+		/*
+		 * interfaceLog.info("====>>请求"); runLog.info("请求02");
+		 */
 		UserVo u = new UserVo();
 		u = userService.login(u);
 
@@ -46,6 +42,8 @@ public class UserController {
 		System.out.println("dddddddddddddddddd");
 
 		List<UserVo> list = userService.GetUserList();
+
+		UserVo mo = userService.selectByPrimaryKey("2");
 		return "test";
 	}
 
