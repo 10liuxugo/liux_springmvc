@@ -7,4 +7,4 @@
 	<mappers>
     <mapper  resource="com/liux/sys/mapping/UserMapper.xml"/>
 	</mappers>
-</configuration>  
+</configuration>
